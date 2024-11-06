@@ -289,7 +289,7 @@ def _alphabet_size():
     Calculates the alphabet size of the domain
     :return: 
     """
-    if __unigram is ():
+    if __unigram == ():
         raise UnsuitableFeatureOrderException('The feature _n_grams has to be calculated before.')
     return [len(__unigram)]
 
@@ -300,7 +300,7 @@ def _shannon_entropy():
     :return: 
     """
     # Note for me: checked against an online calculator for verification: http://www.shannonentropy.netmark.pl/
-    if __unigram is ():
+    if __unigram == ():
         raise UnsuitableFeatureOrderException('The feature _n_grams has to be calculated before.')
 
     return [stats.entropy(__unigram, base=2)]
@@ -335,7 +335,7 @@ def _ratio_of_repeated_chars():
     :return: 
     """
     # TODO maybe weighted? check the impact
-    if __unigram is ():
+    if __unigram == ():
         raise UnsuitableFeatureOrderException('The feature _n_grams has to be calculated before.')
     repeating = 0
     for i in __unigram:
