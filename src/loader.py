@@ -155,6 +155,9 @@ def load_graph(path, not_multigraph=True):
     :param not_multigraph: If set true, multigraph edges are merged (parallel edge between same adjecnodes)
     :returns: tuple of (nodes, edges, has public domains, has isolates, pruning info, extras
     """
+    print(os.path.join(path))
+    files = os.listdir(os.path.join(path))
+    print(files)
     with open(os.path.join(path, 'summary.json'), 'r') as json_data:
         summary = json.load(json_data)
 
